@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Start:</strong>
+  <%= @travel_expense.start %>
+</p>
+
+<p>
+  <strong>End:</strong>
+  <%= @travel_expense.end %>
+</p>
+
+<p>
+  <strong>Total price:</strong>
+  <%= @travel_expense.price %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @travel_expense.location %>
+</p>
+
+<%= link_to 'Edit', edit_travel_expense_path(@travel_expense) %> |
+<%= link_to 'Back', travel_expenses_path %>

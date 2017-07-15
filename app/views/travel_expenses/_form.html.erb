@@ -1,0 +1,37 @@
+<%= form_with(model: travel_expense, local: true) do |form| %>
+  <% if travel_expense.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(travel_expense.errors.count, "error") %> prohibited this travel_expense from being saved:</h2>
+
+      <ul>
+      <% travel_expense.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :start %>
+    <%= form.datetime_select :start, id: :travel_expense_start %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end %>
+    <%= form.datetime_select :end, id: :travel_expense_end %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.text_field :price, id: :travel_expense_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :location %>
+    <%= form.text_field :location, id: :travel_expense_location %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
